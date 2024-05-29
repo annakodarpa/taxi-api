@@ -10,6 +10,7 @@ interface IRideRequest extends Document {
     proposedPrice: number;
     status: string;
     bids: [{
+        _id: { type: mongoose.Types.ObjectId, auto: true },
         fleetId: mongoose.Types.ObjectId,
         bidAmount: number
     }]
@@ -24,6 +25,7 @@ const RideRequestSchema: Schema = new Schema({
     proposedPrice: { type: Number, required: true },
     status: { type: String, required: true, default: 'open', hide: true },
     bids: [{
+        _id: { type: mongoose.Types.ObjectId, auto: true, hide: false },
         fleetId: { type: String, ref: 'Fleet' },
         bidAmount: { type: Number, required: true }
     }],
