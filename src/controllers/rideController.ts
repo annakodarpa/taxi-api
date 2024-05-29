@@ -15,7 +15,11 @@ export const requestRide = async (req: Request, res: Response) => {
 export const viewRideRequests = async (req: Request, res: Response) => {
     try {
         const rideRequests = await RideRequest.find({ status: 'open' });
-        res.status(200).json(rideRequests);
+        const simplifiedRideRequests = rideRequests.map((rideRequest) => {
+            const { _id, clientId, pickupLocation, dropoffLocation, proposedPrice } = rideRequest;
+            return { _id, clientId, pickupLocation, dropoffLocation, proposedPrice };
+        });
+        res.status(200).json(simplifiedRideRequests);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
