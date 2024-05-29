@@ -25,6 +25,9 @@ http://localhost:4000/api/bids
 
 for example.
 
+## Coding
+To compile the typescript code run `npx tsc` and to compile the code on every change run `npx tsc -w`
+
 ### Prerequisites
 
 - Docker
