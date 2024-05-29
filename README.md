@@ -10,7 +10,7 @@ This API allows clients to request rides and fleets to place bids on those reque
 2. View Ride Requests
 3. Make Bid on Ride
 4. View Bids on Ride
-5. Accept Bid (To be implemented)
+5. Accept Bid
 
 ## Running Locally
 run `docker-compose up --build`
